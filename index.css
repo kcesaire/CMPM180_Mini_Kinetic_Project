@@ -1,0 +1,17 @@
+.word {
+    color:lemonchiffon;
+    font-size: 2em;
+    position: absolute;
+    pointer-events: none;
+    animation: fall 3s forwards;
+}
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+}
