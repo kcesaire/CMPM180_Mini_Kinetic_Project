@@ -1,17 +1,27 @@
+/* Styling for each dynamically created word element */
 .word {
-    color:lemonchiffon;
+    color: lemonchiffon;
     font-size: 2em;
+    
+    /* absolute positioning allows exact (X, Y) placement via style.left and style.top */
     position: absolute;
+    
+    /* pointer-events: none ensures mouse events pass through the words rather than getting blocked */
     pointer-events: none;
+    
+    /* Triggers the 3-second 'fall' animation defined below. 
+       'forwards' preserves the final keyframe state (invisible) until JS removes it */
     animation: fall 3s forwards;
 }
+
+/* CSS Keyframe Animation: linearly transitions properties from 0% (start) to 100% (end) */
 @keyframes fall {
     0% {
-        opacity: 1;
-        transform: translateY(0px);
+        opacity: 1;                /* Fully visible */
+        transform: translateY(0px); /* Starting at cursor level */
     }
     100% {
-        opacity: 0;
-        transform: translateY(300px);
+        opacity: 0;                  /* Fades out completely */
+        transform: translateY(300px); /* Drops 300 pixels downward */
     }
 }
